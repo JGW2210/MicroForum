@@ -47,12 +47,12 @@ async function refresh() {
   const [postRes, commentsRes] = await Promise.all([
     supabase
       .from("posts")
-      .select("id, title, body, created_at, profiles ( display_name )")
+      .select("id, title, body, created_at, profiles!posts_author_id_fkey ( display_name )")
       .eq("id", postId)
       .maybeSingle(),
     supabase
       .from("comments")
-      .select("id, post_id, parent_id, author_id, body, created_at, profiles ( display_name )")
+      .select("id, post_id, parent_id, author_id, body, created_at, profiles!comments_author_id_fkey ( display_name )")
       .eq("post_id", postId)
       .order("created_at", { ascending: true }),
   ]);

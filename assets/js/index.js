@@ -35,7 +35,7 @@ async function init() {
 async function loadPosts() {
   const { data, error } = await supabase
     .from("posts")
-    .select("id, title, body, created_at, profiles ( display_name ), comments ( count )")
+    .select("id, title, body, created_at, profiles!posts_author_id_fkey ( display_name ), comments ( count )")
     .order("created_at", { ascending: false });
 
   if (error) {
