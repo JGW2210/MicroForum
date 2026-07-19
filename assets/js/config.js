@@ -6,8 +6,8 @@
 // publish: every table is protected by Row Level Security, so the key only
 // grants what the policies in supabase/schema.sql allow.
 window.MICROFORUM_CONFIG = {
-  SUPABASE_URL: "YOUR_SUPABASE_PROJECT_URL", // e.g. "https://abcdefgh.supabase.co"
-  SUPABASE_ANON_KEY: "YOUR_SUPABASE_ANON_KEY",
+  SUPABASE_URL: "https://ywhvbpgihfncfvufutec.supabase.co",
+  SUPABASE_ANON_KEY: "sb_publishable_MpJ82je8n_xaZkcyxVovJA_DWjF490m",
 
   // Only this account can create posts. Must match the email in the
   // is_owner() function inside supabase/schema.sql — the database enforces
